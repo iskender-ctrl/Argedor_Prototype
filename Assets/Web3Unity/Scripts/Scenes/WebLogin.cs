@@ -26,6 +26,8 @@ public class WebLogin : MonoBehaviour
 
     async private void OnConnected()
     {
+        print("lalala");
+
         account = ConnectAccount();
         while (account == "") {
             await new WaitForSeconds(1f);
