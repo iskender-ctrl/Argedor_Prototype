@@ -8,6 +8,8 @@ public class InstantiateCharacter : MonoBehaviour
     int index = ChooseCharacterManager.instance.index;
     void Start()
     {
-        Instantiate(charactersList[index], Vector3.zero, charactersList[index].transform.rotation);
+        GameObject player = Instantiate(charactersList[index], Vector3.zero, charactersList[index].transform.rotation);
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.transform.GetChild(2).gameObject.SetActive(true);
     }
 }

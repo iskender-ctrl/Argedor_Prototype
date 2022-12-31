@@ -16,7 +16,7 @@ public class WebLogin : MonoBehaviour
     private static extern void SetConnectAccount(string value);
 
     private int expirationTime;
-    private string account; 
+    private string account;
 
     public void OnLogin()
     {
@@ -29,7 +29,8 @@ public class WebLogin : MonoBehaviour
         print("lalala");
 
         account = ConnectAccount();
-        while (account == "") {
+        while (account == "")
+        {
             await new WaitForSeconds(1f);
             account = ConnectAccount();
         };
@@ -37,6 +38,7 @@ public class WebLogin : MonoBehaviour
         PlayerPrefs.SetString("Account", account);
         // reset login message
         SetConnectAccount("");
+        Debug.Log("Account: " + account);
         // load next scene
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

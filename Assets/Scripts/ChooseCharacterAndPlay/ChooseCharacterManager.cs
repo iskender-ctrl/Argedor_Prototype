@@ -15,7 +15,11 @@ public class ChooseCharacterManager : MonoBehaviour
         for (int i = 0; i < Characters.Count; i++)
         {
             GameObject tmp = Instantiate(Characters[i].gameObject, targetPos, Characters[i].gameObject.transform.rotation, parentGameObject);
-            tmp.SetActive(false);
+
+            if (i > 0)
+            {
+                tmp.SetActive(false);
+            }
         }
     }
 }
